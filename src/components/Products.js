@@ -33,15 +33,18 @@ const Products = (props) => {
               <strong>Quantity: </strong> {item.quantity}
             </p>
           </div>
-          <div className="card-footer">
-            <input
-              type="text"
-              className="form-control"
-              onChange={handleChange}
-              data-index={index}
-              value={quantity[index] || 0}
-              maxLength={2}
-            />
+          <div className="card-footer d-flex flex-row justify-content-between align-items-center">
+            <div className="w-50">
+              <input
+                type="text"
+                className="form-control"
+                onChange={handleChange}
+                data-index={index}
+                value={quantity[index] || ''}
+                placeholder="0"
+                maxLength={2}
+              />
+            </div>
             <button
               onClick={handleClick}
               data-index={index}
