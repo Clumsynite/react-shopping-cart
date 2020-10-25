@@ -2,19 +2,22 @@ import React, { useState } from "react";
 
 const Products = (props) => {
   const [phones] = useState(props.phones);
+  const [quantity, setQuantity] = useState({});
+  const handleChange = (e) => {
+    const index = e.target.getAttribute("data-index");
+    const quan = e.target.value;
+    setQuantity({ ...quantity, [index]: quan });
+  };
+  const handleClick = (e) => {
+    const index = e.target.getAttribute("data-index");
+  };
   const renderItems = phones.map((item, index) => {
     return (
       <div key={index} className="col mb-3" data-index={index}>
-        <div
-          className="card"
-          data-index={index}
-          style={{ cursor: "pointer" }}
-          title={item.name}
-        >
+        <div className="card" style={{ cursor: "pointer" }} title={item.name}>
           <img
             src={item.src}
             alt={item.name}
-            data-index={index}
             style={{ height: "240px" }}
             className="card-img-top"
           />
@@ -29,6 +32,23 @@ const Products = (props) => {
               {" "}
               <strong>Quantity: </strong> {item.quantity}
             </p>
+          </div>
+          <div className="card-footer">
+            <input
+              type="text"
+              className="form-control"
+              onChange={handleChange}
+              data-index={index}
+              value={quantity[index] || 0}
+              maxLength={2}
+            />
+            <button
+              onClick={handleClick}
+              data-index={index}
+              className="btn btn-success pt-2"
+            >
+              <i className="material-icons">add_shopping_cart</i>
+            </button>
           </div>
         </div>
       </div>
