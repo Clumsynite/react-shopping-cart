@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
-import Footer from './components/Footer'
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
           </Switch>
         </div>
       </Router>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
