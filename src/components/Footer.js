@@ -3,7 +3,8 @@ import "../styles/Footer.css";
 const Footer = () => {
   return (
     <footer className="Footer bg-dark text-light">
-      Made by
+      Made with
+      <i className="material-icons heart">favorite</i> by
       <a
         href="https://github.com/Clumsynite"
         title="Github Profile"
@@ -12,8 +13,6 @@ const Footer = () => {
       >
         Clumsyknight
       </a>
-      with
-      <i className="material-icons heart">favorite</i>
     </footer>
   );
 };
