@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const Products = (props) => {
   const [phones] = useState(props.phones);
   const [quantity, setQuantity] = useState({});
+
   const handleChange = (e) => {
     const index = e.target.getAttribute("data-index");
     const quan = e.target.value;
@@ -10,6 +11,7 @@ const Products = (props) => {
   };
   const handleClick = (e) => {
     const index = e.target.getAttribute("data-index");
+    props.addToCart(index, quantity[index]);
   };
   const renderItems = phones.map((item, index) => {
     return (
@@ -54,7 +56,9 @@ const Products = (props) => {
               data-index={index}
               className="btn btn-success pt-2"
             >
-              <i className="material-icons">add_shopping_cart</i>
+              <i className="material-icons" data-index={index}>
+                add_shopping_cart
+              </i>
             </button>
           </div>
         </div>
