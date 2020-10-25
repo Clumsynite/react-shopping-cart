@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import items from "./items";
 
-const Products = () => {
-  const [phones] = useState(items);
+const Products = (props) => {
+  const [phones] = useState(props.phones);
   const renderItems = phones.map((item, index) => {
     return (
       <div key={index} className="col mb-3" data-index={index}>
