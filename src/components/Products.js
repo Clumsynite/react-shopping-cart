@@ -14,7 +14,11 @@ const Products = (props) => {
   const renderItems = phones.map((item, index) => {
     return (
       <div key={index} className="col mb-3" data-index={index}>
-        <div className="card" style={{ cursor: "pointer" }} title={item.name}>
+        <div
+          className="card h-100"
+          style={{ cursor: "pointer" }}
+          title={item.name}
+        >
           <img
             src={item.src}
             alt={item.name}
@@ -40,7 +44,7 @@ const Products = (props) => {
                 className="form-control"
                 onChange={handleChange}
                 data-index={index}
-                value={quantity[index] || ''}
+                value={quantity[index] || ""}
                 placeholder="0"
                 maxLength={2}
               />
@@ -60,7 +64,7 @@ const Products = (props) => {
   return (
     <div className="Products mb-5">
       <div
-        className="row row-cols-2 row-cols-sm-3 row-cols-md-6"
+        className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6"
         style={{ userSelect: "none" }}
       >
         {renderItems}
