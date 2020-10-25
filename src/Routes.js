@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Products from "./components/Products";
@@ -15,6 +15,7 @@ export default function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/products" component={Products} />
             <Route exact path="/cart" component={Cart} />
+            <Redirect to="/" />
           </Switch>
         </div>
       </Router>
