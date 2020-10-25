@@ -14,6 +14,13 @@ import Footer from "./components/Footer";
 
 export default function App() {
   const [phones] = useState(items);
+  const [cart, setcart] = useState([]);
+
+  const addToCart = (e) => {
+    const index = e.target.getAttribute('index')
+    console.log(index)
+  } 
+
   return (
     <div className="Routes">
       <Router>
@@ -22,7 +29,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/products">
-              <Products phones={phones} />
+              <Products phones={phones} cart={cart} addToCart={addToCart}/>
             </Route>
             <Route exact path="/cart" component={Cart} />
             <Redirect to="/" />
