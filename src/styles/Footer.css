@@ -13,12 +13,12 @@
   overflow: hidden;
 }
 
-a {
-  margin: 0 3px;
+.link {
+  margin: 0 4px;
   color: cyan;
 }
 
-a:hover {
+.link:hover {
   text-decoration: none;
   color: #00ffbf;
 }
