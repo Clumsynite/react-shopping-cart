@@ -2,6 +2,12 @@
   "name": "react-shopping-cart",
   "version": "0.1.0",
   "private": true,
+  "author": "Clumsyknight",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clumsynite/react-shopping-cart"
+  },
+  "homepage": "https://clumsynite.github.io/react-shopping-cart",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -13,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
