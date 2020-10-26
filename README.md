@@ -1,8 +1,26 @@
-# Getting Started with Create React App
+# Shopping Cart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+
+This project is built as an [assignment](https://www.theodinproject.com/courses/javascript/lessons/shopping-chart) for [TheOdinProject's](https://www.theodinproject.com/) React curriculum.
+
+You can view the live page [HERE](https://clumsynite.github.io/react-shopping-cart/)
+
+This is a dummy store website which mainly focuses on routes. As, it was built to practice routes in React.
+
+The library [`react-router-dom`](https://www.npmjs.com/package/react-router-dom) helps in using routes in your React app.
+
+It basically has 3 routes:
+
+Name | Route
+-|-
+**Home**|*/*
+**Products**|*/products*
+**Cart**|*/cart*
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
