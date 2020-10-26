@@ -58,6 +58,7 @@ const Products = (props) => {
               onClick={handleClick}
               data-index={index}
               className="btn btn-success pt-2"
+              title="Add to Cart"
             >
               <i className="material-icons" data-index={index}>
                 add_shopping_cart
