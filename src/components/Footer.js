@@ -8,6 +8,7 @@ const Footer = () => {
       <a
         href="https://github.com/Clumsynite"
         title="Github Profile"
+        className="link"
         target="_blank"
         rel="noreferrer"
       >
