@@ -12,7 +12,7 @@ const Cart = (props) => {
 
   const handleClick = (e) => {
     const index = e.target.getAttribute("data-index");
-    props.addToCart(index, quantity[index]);
+    props.removeFromCart(index, quantity[index]);
     setQuantity({ ...quantity, [index]: 0 });
   };
 
@@ -75,7 +75,12 @@ const Cart = (props) => {
   return (
     <div className="Cart mb-5">
       {props.cart.length < 1 && (
-        <div className="alert alert-info">Your Cart is empty right now. Go shop <Link to='/products' className="alert-link">here</Link></div>
+        <div className="alert alert-info">
+          Your Cart is empty right now. Go shop{" "}
+          <Link to="/products" className="alert-link">
+            here
+          </Link>
+        </div>
       )}
       {props.cart.length > 0 && (
         <div
