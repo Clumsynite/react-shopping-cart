@@ -13,7 +13,7 @@ const Products = (props) => {
   const handleClick = (e) => {
     const index = e.target.getAttribute("data-index");
     props.addToCart(index, quantity[index]);
-    setQuantity({...quantity, [index]: 0})
+    setQuantity({ ...quantity, [index]: 0 });
   };
 
   const renderItems = phones.map((item, index) => {
@@ -45,13 +45,13 @@ const Products = (props) => {
           <div className="card-footer d-flex flex-row justify-content-between align-items-center">
             <div className="w-50">
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 onChange={handleChange}
                 data-index={index}
                 value={quantity[index] || ""}
                 placeholder="0"
-                maxLength={2}
+                max={item.quantity}
               />
             </div>
             <button
