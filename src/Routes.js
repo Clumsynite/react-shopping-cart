@@ -56,7 +56,7 @@ export default function App() {
               <Products phones={phones} addToCart={addToCart} />
             </Route>
             <Route exact path="/cart">
-              <Cart cart={phones} />
+              <Cart cart={cart} />
             </Route>
             <Redirect to="/" />
           </Switch>
