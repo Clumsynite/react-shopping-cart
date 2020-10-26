@@ -38,8 +38,28 @@ export default function App() {
       item.quantity = newQuantity;
       item.cart = item.cart + quantity;
       setPhones(array);
-      const cartArray = phones.filter(phone => phone.cart > 0)
-      setCart(cartArray)
+      const cartArray = phones.filter((phone) => phone.cart > 0);
+      setCart(cartArray);
+    }
+  };
+
+  const removeFromCart = (index, quan) => {
+    let quantity = Number(quan) || 0;
+    if (quantity === 0) {
+      setError(`You have to remove atleast 1 ${items[index].name}`);
+    } else if (items[index].cart < quantity) {
+      setError(
+        `Can't remove more ${items[index].name} from cart. Max Limit: ${items[index].cart}`
+      );
+    } else {
+      const array = phones;
+      const item = array[index];
+      const newQuantity = item.quantity + quantity;
+      item.quantity = newQuantity;
+      item.cart = item.cart - quantity;
+      setPhones(array);
+      const cartArray = phones.filter((phone) => phone.cart > 0);
+      setCart(cartArray);
     }
   };
 
@@ -56,7 +76,7 @@ export default function App() {
               <Products phones={phones} addToCart={addToCart} />
             </Route>
             <Route exact path="/cart">
-              <Cart cart={cart} />
+              <Cart cart={cart} removeFromCart={removeFromCart} />
             </Route>
             <Redirect to="/" />
           </Switch>
