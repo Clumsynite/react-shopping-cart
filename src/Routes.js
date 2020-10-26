@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import items from "./components/items";
 import Navbar from "./components/Navbar";
 import Error from "./components/Error";
@@ -75,6 +80,7 @@ export default function App() {
             <Route path="/cart">
               <Cart cart={cart} removeFromCart={removeFromCart} />
             </Route>
+            <Redirect to="/" />
           </Switch>
         </div>
       </Router>
