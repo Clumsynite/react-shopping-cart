@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className="Navbar mb-2">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,10 +35,14 @@ const Navbar = () => {
               <li className="nav-item">
                 <NavLink
                   to="/cart"
-                  className="nav-link"
+                  className="nav-link d-flex flex-row  
+                  align-items-center"
                   activeClassName="active"
                 >
-                  Cart
+                  <i className="material-icons">shopping_cart</i>
+                  {props.cartCount() > 0 && 
+                  <span className="badge  badge-lighupdated
+                  t">{props.cartCount()}</span>}
                 </NavLink>
               </li>
             </ul>
