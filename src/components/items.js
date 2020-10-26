@@ -1,5 +1,6 @@
 const items = [
   {
+    id: 0,
     name: "iPhone 11 Pro Max",
     brand: "Apple",
     price: "1,50,800 INR",
@@ -9,6 +10,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 1,
     name: "iPhone 11",
     brand: "Apple",
     price: "53,500 INR",
@@ -18,6 +20,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 2,
     name: "iPhone XS",
     brand: "Apple",
     price: "99,900 INR",
@@ -27,6 +30,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 3,
     name: "iPhone X",
     brand: "Apple",
     price: "64,789 INR",
@@ -36,6 +40,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 4,
     name: "iPhone 7",
     brand: "Apple",
     price: "27,800 INR",
@@ -45,6 +50,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 5,
     name: "iPhone 6s",
     brand: "Apple",
     price: "29,900 INR",
@@ -54,6 +60,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 6,
     name: "Galaxy Z Fold2",
     brand: "Samsung",
     price: "1,49,990 INR",
@@ -63,6 +70,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 7,
     name: "Galaxy Note10",
     brand: "Samsung",
     price: "73,600 INR",
@@ -72,6 +80,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 8,
     name: "Galaxy Note10 Lite",
     brand: "Samsung",
     price: "39,999 INR",
@@ -81,6 +90,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 9,
     name: "Galaxy Note20 Ultra",
     brand: "Samsung",
     price: "1,04,999 INR",
@@ -90,6 +100,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 10,
     name: "Galaxy Note20",
     brand: "Samsung",
     price: "77,999 INR",
@@ -99,6 +110,7 @@ const items = [
     cart: 0,
   },
   {
+    id: 11,
     name: "OnePlus 8",
     brand: "OnePlus",
     price: "44,999 INR",
