@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import items from "./components/items";
 import Navbar from "./components/Navbar";
 import Error from "./components/Error";
@@ -67,7 +62,7 @@ export default function App() {
 
   return (
     <div className="Routes">
-      <Router>
+      <Router basename="/">
         <Navbar count={cart.length} />
 
         <div className="container">
