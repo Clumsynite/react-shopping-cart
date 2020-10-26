@@ -47,13 +47,15 @@ export default function App() {
     let quantity = Number(quan) || 0;
     if (quantity === 0) {
       setError(`You have to remove atleast 1 ${items[index].name}`);
-    } else if (items[index].cart < quantity) {
+    } else if (items[cart[index].id].cart < quantity) {
       setError(
-        `Can't remove more ${items[index].name} from cart. Max Limit: ${items[index].cart}`
+        `Can't remove more ${
+          items[cart[index].id].name
+        } from cart. Max Limit: ${items[cart[index].id].cart}`
       );
     } else {
       const array = phones;
-      const item = array[index];
+      const item = array[cart[index].id];
       const newQuantity = item.quantity + quantity;
       item.quantity = newQuantity;
       item.cart = item.cart - quantity;
