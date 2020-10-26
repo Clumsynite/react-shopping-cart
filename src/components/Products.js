@@ -9,10 +9,13 @@ const Products = (props) => {
     const quan = e.target.value;
     setQuantity({ ...quantity, [index]: quan });
   };
+
   const handleClick = (e) => {
     const index = e.target.getAttribute("data-index");
     props.addToCart(index, quantity[index]);
+    setQuantity({...quantity, [index]: 0})
   };
+
   const renderItems = phones.map((item, index) => {
     return (
       <div key={index} className="col mb-3" data-index={index}>
@@ -65,6 +68,7 @@ const Products = (props) => {
       </div>
     );
   });
+
   return (
     <div className="Products mb-5">
       <div
