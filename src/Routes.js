@@ -16,10 +16,6 @@ import Footer from "./components/Footer";
 export default function App() {
   const [phones, setPhones] = useState(items);
   const [cart, setCart] = useState([]);
-  useEffect(() => {
-    const array = phones.filter((phone) => phone.cart > 0);
-    setCart(array);
-  }, [phones, setCart]);
   const [error, setError] = useState("");
   useEffect(() => {
     return setTimeout(() => {
@@ -42,17 +38,15 @@ export default function App() {
       item.quantity = newQuantity;
       item.cart = item.cart + quantity;
       setPhones(array);
+      const cartArray = phones.filter(phone => phone.cart > 0)
+      setCart(cartArray)
     }
-  };
-
-  const cartCount = () => {
-    return phones.filter((phone) => phone.cart > 0).length;
   };
 
   return (
     <div className="Routes">
       <Router>
-        <Navbar cartCount={cartCount} />
+        <Navbar count={cart.length} />
 
         <div className="container">
           {error && <Error error={error} />}
