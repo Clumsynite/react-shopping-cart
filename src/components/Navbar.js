@@ -1,6 +1,9 @@
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = (props) => {
+  const [count] = useState(props.cartCount());
+
   return (
     <div className="Navbar mb-2">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -40,9 +43,9 @@ const Navbar = (props) => {
                   activeClassName="active"
                 >
                   <i className="material-icons">shopping_cart</i>
-                  {props.cartCount() > 0 && 
-                  <span className="badge  badge-lighupdated
-                  t">{props.cartCount()}</span>}
+                  {count > 0 && (
+                    <span className="badge  badge-light">{count}</span>
+                  )}
                 </NavLink>
               </li>
             </ul>
