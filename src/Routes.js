@@ -14,8 +14,8 @@ import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [phones] = useState(items);
-  const [cart, setcart] = useState([]);
+  const [phones, setPhones] = useState(items);
+  const [cart, setcart] = useState({});
   const [error, setError] = useState("");
   useEffect(() => {
     return setTimeout(() => {
@@ -30,6 +30,12 @@ export default function App() {
       setError(
         `Can't add more ${items[index].name} to cart. Max Limit: ${items[index].quantity}`
       );
+    } else {
+      const array = phones;
+      const newQuantity = array[index].quantity - quantity;
+      array[index].quantity = newQuantity;
+      setPhones(array);
+      setcart({ ...cart, [index]: array[index] });
     }
   };
 
