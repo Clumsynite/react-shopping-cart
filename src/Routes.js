@@ -15,13 +15,13 @@ import Footer from "./components/Footer";
 
 export default function App() {
   const [phones, setPhones] = useState(items);
-  const [cart, setcart] = useState({});
   const [error, setError] = useState("");
   useEffect(() => {
     return setTimeout(() => {
       setError("");
     }, 5000);
   }, [error, setError]);
+
   const addToCart = (index, quan) => {
     let quantity = quan || 0;
     if (quantity === 0) {
@@ -32,26 +32,33 @@ export default function App() {
       );
     } else {
       const array = phones;
-      const newQuantity = array[index].quantity - quantity;
-      array[index].quantity = newQuantity;
-      setPhones(array);
-      setcart({ ...cart, [index]: array[index] });
+      const item = array[index]
+      const newQuantity = item.quantity - quantity;
+      item.quantity = newQuantity
+      item.cart = item.cart + quantity
+      setPhones(array)
     }
   };
+
+  const cartCount = () => {
+    return phones.filter(phone => phone.cart > 0).length
+  }
 
   return (
     <div className="Routes">
       <Router>
-        <Navbar />
+        <Navbar cartCount={cartCount}/>
 
         <div className="container">
           {error && <Error error={error} />}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/products">
-              <Products phones={phones} cart={cart} addToCart={addToCart} />
+              <Products phones={phones} addToCart={addToCart} />
             </Route>
-            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/cart">
+              <Cart cart={phones} />
+            </Route>
             <Redirect to="/" />
           </Switch>
         </div>
