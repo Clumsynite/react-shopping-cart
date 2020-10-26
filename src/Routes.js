@@ -74,10 +74,10 @@ export default function App() {
           {error && <Error error={error} />}
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/products">
+            <Route path="/products">
               <Products phones={phones} addToCart={addToCart} />
             </Route>
-            <Route exact path="/cart">
+            <Route path="/cart">
               <Cart cart={cart} removeFromCart={removeFromCart} />
             </Route>
           </Switch>
