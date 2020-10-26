@@ -80,7 +80,6 @@ export default function App() {
             <Route exact path="/cart">
               <Cart cart={cart} removeFromCart={removeFromCart} />
             </Route>
-            <Redirect to="/" />
           </Switch>
         </div>
       </Router>
